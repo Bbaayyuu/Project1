@@ -1,0 +1,7 @@
+﻿Source.obj : error LNK2019: unresolved external symbol SDL_CreateWindow referenced in function SDL_main
+Source.obj : error LNK2019: unresolved external symbol SDL_Init referenced in function SDL_main
+Source.obj : error LNK2019: unresolved external symbol SDL_Quit referenced in function SDL_main
+MSVCRTD.lib(exe_winmain.obj) : error LNK2019: unresolved external symbol WinMain referenced in function "int __cdecl invoke_main(void)" (?invoke_main@@YAHXZ)
+SDL/libx86/SDL2.lib : warning LNK4272: library machine type 'X86' conflicts with target machine type 'x64'
+SDL/libx86/SDL2main.lib : warning LNK4272: library machine type 'X86' conflicts with target machine type 'x64'
+C:\Users\polcc\Desktop\Project24\x64\Debug\Project24.exe : fatal error LNK1120: 4 unresolved externals
