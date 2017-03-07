@@ -5,18 +5,19 @@
 #pragma comment (lib, "SDL/libx86/SDL2.lib")
 #pragma comment (lib, "SDL/libx86/SDL2main.lib")
 
-#define MAX_BULLETS 25
+#define MAX_BULLETS 40
 int main(int argc, char* args[] )
 {
 	bool fire = false;
 	bool quit = false;
+
 	//SDL_Quit();
 	SDL_Window* window;
 	SDL_Renderer* Renderer;
 	SDL_Init(SDL_INIT_EVERYTHING);
 
 	//creating the red window
-	SDL_CreateWindowAndRenderer(1640, 980, SDL_WINDOW_RESIZABLE, &window, &Renderer);
+	SDL_CreateWindowAndRenderer(980, 700, SDL_WINDOW_RESIZABLE, &window, &Renderer);
 
 	//Creating the texture of the image from a surface.
 	SDL_Surface* image;
@@ -57,8 +58,8 @@ int main(int argc, char* args[] )
 	SDL_Rect q;
 	q.x = 0;
 	q.y = 0;
-	q.w = 1640;
-	q.h = 980;
+	q.w = 2580;
+	q.h = 700;
 	
 	while(quit == false)
 	{
@@ -74,6 +75,8 @@ int main(int argc, char* args[] )
 		SDL_RenderCopy(Renderer, marc4, NULL, &q);
 		SDL_RenderCopy(Renderer, marc2, NULL, &r);
 		
+		//Movement of the background
+		q.x--;
 
 		for (int i = 0; i < MAX_BULLETS; i++)
 		{
@@ -101,13 +104,13 @@ int main(int argc, char* args[] )
 					{
 					case SDLK_ESCAPE: quit = true;
 						break;
-					case SDLK_UP: r.y = r.y - 15;
+					case SDLK_UP: r.y = r.y - 35;
 						break;
-					case SDLK_DOWN: r.y = r.y + 15;
+					case SDLK_DOWN: r.y = r.y + 35;
 						break;
-					case SDLK_LEFT: r.x = r.x - 15;
+					case SDLK_LEFT: r.x = r.x - 35;
 						break;
-					case SDLK_RIGHT: r.x = r.x + 15;
+					case SDLK_RIGHT: r.x = r.x + 35;
 						break;
 					case SDLK_SPACE:
 						fire = true;
@@ -124,7 +127,7 @@ int main(int argc, char* args[] )
 				}
 			}
 			
-			SDL_Delay(0);
+			SDL_Delay(1);
 			
 	}
 
